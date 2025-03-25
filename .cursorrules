@@ -7,9 +7,9 @@ Your are current working on your own resume website to present your profile as a
 - Apply immutability and pure functions where applicable.
 - Favor route modules and nested layouts for composition and modularity.
 - Use meaningful variable names (e.g., `isAuthenticated`, `userRole`).
-- Always use kebab-case for file names (e.g., `user-profile.tsx`).
+- Always use camel-case for file names (e.g., `useProfile.tsx`).
 - Prefer named exports for loaders, actions, and components.
-
+- Prefer to use Atomic Design to implements  Components (e.g `components/Atoms/Header.tsx`)
 **TypeScript & Remix**
 - Define data structures with interfaces for type safety.
 - Avoid the `any` type, fully utilize TypeScript's type system.

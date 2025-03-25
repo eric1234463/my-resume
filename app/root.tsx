@@ -5,7 +5,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 import "./tailwind.css";
 
@@ -22,16 +23,23 @@ export const links: LinksFunction = () => [
   },
 ];
 
+// Function to get theme from cookie or user preference
+export const loader: LoaderFunction = async () => {
+  return json({
+    theme: 'dark', // Always dark theme
+  });
+};
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-dark-900 text-dark-100 transition-colors duration-200">
         {children}
         <ScrollRestoration />
         <Scripts />

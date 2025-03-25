@@ -1,138 +1,163 @@
 import type { MetaFunction } from "@remix-run/node";
+import { ResumePage } from '~/components/templates/ResumePage';
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: 'Eric Kwong - Senior Full Stack Engineer' },
+    { name: 'description', content: 'Senior Full Stack Engineer with expertise in React, Node.js, and cloud technologies' },
   ];
 };
 
 export default function Index() {
+  const resumeData = {
+    personalInfo: {
+      name: "Kwong Ka Kit, Eric",
+      title: "Senior Full Stack Engineer",
+      email: "eric1234463@gmail.com",
+      phone: "92019865",
+      location: "Hong Kong",
+      linkedin: "https://linkedin.com/in/eric-kwong-815b30122",
+      github: "https://github.com/eric1234463",
+      avatar: {
+        src: "/images/avatar.jpg",
+        alt: "Eric Kwong",
+        size: "xl" as const,
+        borderColor: "primary-500",
+        borderWidth: "medium" as const,
+        shadow: "lg" as const,
+        className: "animate-pulse-slow"
+      }
+    },
+    experiences: [
+      {
+        company: 'Cronos Labs',
+        position: 'Senior Software Engineer',
+        location: 'Hong Kong',
+        startDate: 'May 2024',
+        endDate: 'Mar 2025',
+        description: [
+          'Led frontend development for decentralized applications (dApps) using React, Tailwind, and Chakra UI.',
+          'Spearheaded the creation of Telegram mini-apps and games, boosting user engagement for token-based airdrops and rewards.',
+          'Collaborated on system design to ensure scalable and responsive dApp architecture.'
+        ],
+        technologies: ['React', 'Chakra UI', 'Tailwind', 'EtherJS']
+      },
+      {
+        company: 'PICKUPP',
+        position: 'Engineering Lead',
+        location: 'Hong Kong',
+        startDate: 'Feb 2022',
+        endDate: 'May 2024',
+        description: [
+          'Directed full-stack development of the Last Mile Platform using React, NestJS, and AWS, overseeing an international scrum team across Malaysia and Taiwan.',
+          'Architected new service designs to separate point-to-point and last-mile delivery, enhancing operational efficiency.',
+          'Refactored the Delivery Agent App, slashing error rates from 8% to 1% through optimized code and testing.'
+        ],
+        technologies: ['React', 'React Native', 'gRPC', 'NestJS', 'NATS', 'Postgres', 'AWS']
+      },
+      {
+        company: 'Diginex',
+        position: 'Tech Lead',
+        location: 'Hong Kong',
+        startDate: 'Sep 2021',
+        endDate: 'Feb 2022',
+        description: [
+          'Designed and deployed a flexible ESG reporting framework architecture, enabling scalable onboarding of companies to create customized ESG reporting solutions.',
+          'Led a Vietnam-based scrum team of eight engineers to develop and enhance features for the ESG platform using VueJS and NestJS.',
+          'Architected real-time data processing systems with Kafka and Kubernetes, ensuring robustness and scalability for growing client demands.'
+        ],
+        technologies: ['VueJS', 'NestJS', 'Kafka', 'Postgres', 'Azure', 'Kubernetes']
+      },
+      {
+        company: 'HK01',
+        position: 'Senior Software Engineer',
+        location: 'Hong Kong',
+        startDate: 'Jan 2021',
+        endDate: 'Aug 2021',
+        description: [
+          'Revamped the HK01 web article page with A/B testing, improving user retention.',
+          'Built a custom HTML video player with VideoJS SDK for 01TV, enhancing multimedia performance.',
+          'Migrated the frontend from styled-components to Tailwind, reducing render times by 30%.'
+        ],
+        technologies: ['React', 'NestJS', 'NextJS', 'Tailwind', 'Laravel', 'Storybook', 'AWS', 'Kubernetes']
+      },
+      {
+        company: 'Shopline',
+        position: 'Senior Software Engineer',
+        location: 'Hong Kong',
+        startDate: 'Jun 2018',
+        endDate: 'Nov 2020',
+        description: [
+          'Led full stack development in React & NodeJS & Ruby on Rails, achieving 70% unit test coverage.',
+          'Successfully migrated frontend framework from AngularJS to React.',
+          'Developed a new solution for Facebook live streaming to enhance shopping experience.'
+        ],
+        technologies: ['React', 'NodeJS', 'Ruby on Rails', 'styled-components', 'Storybook', 'AWS', 'Kubernetes']
+      }
+    ],
+    skillCategories: [
+      {
+        name: 'Frontend Technologies',
+        skills: ['React', 'React Native', 'VueJS', 'NextJS', 'Tailwind CSS', 'Chakra UI', 'Storybook']
+      },
+      {
+        name: 'Backend Technologies',
+        skills: ['NestJS', 'NodeJS', 'Ruby on Rails', 'gRPC', 'NATS', 'Kafka', 'Laravel', 'PostgreSQL']
+      },
+      {
+        name: 'DevOps & Cloud',
+        skills: ['AWS', 'Azure', 'Kubernetes', 'Docker']
+      },
+      {
+        name: 'Blockchain',
+        skills: ['EtherJS', 'Decentralized Applications (dApps)', 'Smart Contracts']
+      }
+    ],
+    projects: [
+      {
+        title: 'Here Web',
+        description: 'My BU FYP Project to implement a doctor visit public health record system for claim insurance',
+        technologies: ['Ionic', 'Angular', 'NodeJS'],
+        link: '#',
+        github: 'https://github.com/eric1234463/here_web'
+      },
+      {
+        title: 'Path Web',
+        description: 'My University Side Project to find your mentor in your university life and share the university program experience',
+        technologies: ['PHP', 'AngularJS', 'MySQL'],
+        link: '#',
+        github: 'https://github.com/eric1234463/Path'
+      },
+      {
+        title: 'Unify App',
+        description: 'My HKUSPACE FYP - a social network app base on your university timetable to do matching to explore some new relationship',
+        technologies: ['Ionic', 'AngularJS', 'MySQL'],
+        link: '#',
+        github: 'https://github.com/eric1234463/Unify'
+      }
+    ],
+    education: [
+      {
+        institution: 'Hong Kong Baptist University',
+        degree: 'Bachelor of Science (Hons) in Computing and Information System',
+        location: 'Hong Kong',
+        startDate: '2016',
+        endDate: '2018',
+        achievements: [
+          'Specialized in software development and information systems',
+          'Participated in programming competitions and hackathons'
+        ]
+      }
+    ]
+  };
+
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            Welcome to <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
-          </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <ResumePage
+      personalInfo={resumeData.personalInfo}
+      experiences={resumeData.experiences}
+      skillCategories={resumeData.skillCategories}
+      projects={resumeData.projects}
+      education={resumeData.education}
+    />
   );
 }
-
-const resources = [
-  {
-    href: "https://remix.run/start/quickstart",
-    text: "Quick Start (5 min)",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M8.51851 12.0741L7.92592 18L15.6296 9.7037L11.4815 7.33333L12.0741 2L4.37036 10.2963L8.51851 12.0741Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://remix.run/start/tutorial",
-    text: "Tutorial (30 min)",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M4.561 12.749L3.15503 14.1549M3.00811 8.99944H1.01978M3.15503 3.84489L4.561 5.2508M8.3107 1.70923L8.3107 3.69749M13.4655 3.84489L12.0595 5.2508M18.1868 17.0974L16.635 18.6491C16.4636 18.8205 16.1858 18.8205 16.0144 18.6491L13.568 16.2028C13.383 16.0178 13.0784 16.0347 12.915 16.239L11.2697 18.2956C11.047 18.5739 10.6029 18.4847 10.505 18.142L7.85215 8.85711C7.75756 8.52603 8.06365 8.21994 8.39472 8.31453L17.6796 10.9673C18.0223 11.0653 18.1115 11.5094 17.8332 11.7321L15.7766 13.3773C15.5723 13.5408 15.5554 13.8454 15.7404 14.0304L18.1868 16.4767C18.3582 16.6481 18.3582 16.926 18.1868 17.0974Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://remix.run/docs",
-    text: "Remix Docs",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 20 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M9.99981 10.0751V9.99992M17.4688 17.4688C15.889 19.0485 11.2645 16.9853 7.13958 12.8604C3.01467 8.73546 0.951405 4.11091 2.53116 2.53116C4.11091 0.951405 8.73546 3.01467 12.8604 7.13958C16.9853 11.2645 19.0485 15.889 17.4688 17.4688ZM2.53132 17.4688C0.951566 15.8891 3.01483 11.2645 7.13974 7.13963C11.2647 3.01471 15.8892 0.951453 17.469 2.53121C19.0487 4.11096 16.9854 8.73551 12.8605 12.8604C8.73562 16.9853 4.11107 19.0486 2.53132 17.4688Z"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
-  },
-  {
-    href: "https://rmx.as/discord",
-    text: "Join Discord",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="20"
-        viewBox="0 0 24 20"
-        fill="none"
-        className="stroke-gray-600 group-hover:stroke-current dark:stroke-gray-300"
-      >
-        <path
-          d="M15.0686 1.25995L14.5477 1.17423L14.2913 1.63578C14.1754 1.84439 14.0545 2.08275 13.9422 2.31963C12.6461 2.16488 11.3406 2.16505 10.0445 2.32014C9.92822 2.08178 9.80478 1.84975 9.67412 1.62413L9.41449 1.17584L8.90333 1.25995C7.33547 1.51794 5.80717 1.99419 4.37748 2.66939L4.19 2.75793L4.07461 2.93019C1.23864 7.16437 0.46302 11.3053 0.838165 15.3924L0.868838 15.7266L1.13844 15.9264C2.81818 17.1714 4.68053 18.1233 6.68582 18.719L7.18892 18.8684L7.50166 18.4469C7.96179 17.8268 8.36504 17.1824 8.709 16.4944L8.71099 16.4904C10.8645 17.0471 13.128 17.0485 15.2821 16.4947C15.6261 17.1826 16.0293 17.8269 16.4892 18.4469L16.805 18.8725L17.3116 18.717C19.3056 18.105 21.1876 17.1751 22.8559 15.9238L23.1224 15.724L23.1528 15.3923C23.5873 10.6524 22.3579 6.53306 19.8947 2.90714L19.7759 2.73227L19.5833 2.64518C18.1437 1.99439 16.6386 1.51826 15.0686 1.25995ZM16.6074 10.7755L16.6074 10.7756C16.5934 11.6409 16.0212 12.1444 15.4783 12.1444C14.9297 12.1444 14.3493 11.6173 14.3493 10.7877C14.3493 9.94885 14.9378 9.41192 15.4783 9.41192C16.0471 9.41192 16.6209 9.93851 16.6074 10.7755ZM8.49373 12.1444C7.94513 12.1444 7.36471 11.6173 7.36471 10.7877C7.36471 9.94885 7.95323 9.41192 8.49373 9.41192C9.06038 9.41192 9.63892 9.93712 9.6417 10.7815C9.62517 11.6239 9.05462 12.1444 8.49373 12.1444Z"
-          strokeWidth="1.5"
-        />
-      </svg>
-    ),
-  },
-];
