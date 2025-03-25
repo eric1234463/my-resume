@@ -118,21 +118,18 @@ export default function Index() {
         title: 'Here Web',
         description: 'My BU FYP Project to implement a doctor visit public health record system for claim insurance',
         technologies: ['Ionic', 'Angular', 'NodeJS'],
-        link: '#',
         github: 'https://github.com/eric1234463/here_web'
       },
       {
         title: 'Path Web',
         description: 'My University Side Project to find your mentor in your university life and share the university program experience',
         technologies: ['PHP', 'AngularJS', 'MySQL'],
-        link: '#',
         github: 'https://github.com/eric1234463/Path'
       },
       {
         title: 'Unify App',
         description: 'My HKUSPACE FYP - a social network app base on your university timetable to do matching to explore some new relationship',
         technologies: ['Ionic', 'AngularJS', 'MySQL'],
-        link: '#',
         github: 'https://github.com/eric1234463/Unify'
       }
     ],
