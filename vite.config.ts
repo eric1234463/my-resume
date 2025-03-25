@@ -9,6 +9,9 @@ declare module "@remix-run/node" {
 }
 
 export default defineConfig({
+  // Base path for GitHub Pages - if not deploying to a custom domain
+  // Uncomment the line below and replace 'my-resume' with your repository name
+  // base: process.env.NODE_ENV === 'production' ? '/my-resume/' : '/',
   plugins: [
     remix({
       future: {

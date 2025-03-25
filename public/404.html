@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // This script takes the current URL and converts the path and query
+    // parameters into a redirect to the correct GitHub Pages URL.
+    (function() {
+      // Get the path excluding the domain
+      var path = window.location.pathname;
+
+      // If this is a GitHub Pages site, remove the repo name from the path
+      var repoName = '/my-resume'; // Replace with your repo name
+      if (path.indexOf(repoName) === 0) {
+        path = path.replace(repoName, '');
+      }
+
+      // Store the path and query string for use after redirect
+      var query = window.location.search;
+      var hash = window.location.hash;
+
+      // Redirect to the index with the path, query, and hash stored
+      var redirect = '/?path=' + encodeURIComponent(path) +
+                    '&query=' + encodeURIComponent(query) +
+                    '&hash=' + encodeURIComponent(hash);
+
+      window.location.href = redirect;
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to the homepage...</p>
+</body>
+</html>
