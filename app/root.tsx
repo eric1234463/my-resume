@@ -33,31 +33,6 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-// GitHub Pages redirect handler
-function GitHubPagesRedirect() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    // Check if we have redirect parameters from our 404.html
-    const url = new URL(window.location.href);
-    const path = url.searchParams.get('path');
-    const query = url.searchParams.get('query');
-    const hash = url.searchParams.get('hash');
-
-    // If we have a path parameter, we should redirect
-    if (path && location.pathname === '/') {
-      // Clean the URL (to remove the redirect parameters)
-      window.history.replaceState(null, '', path + (query || '') + (hash || ''));
-
-      // Navigate to the correct route with Remix
-      navigate(path + (query || ''), { replace: true });
-    }
-  }, [location, navigate]);
-
-  return null;
-}
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark">
@@ -79,7 +54,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <>
-      <GitHubPagesRedirect />
       <Outlet />
     </>
   );
