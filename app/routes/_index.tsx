@@ -53,7 +53,7 @@ export default function Index() {
           'Architected new service designs to separate point-to-point and last-mile delivery, enhancing operational efficiency.',
           'Refactored the Delivery Agent App, slashing error rates from 8% to 1% through optimized code and testing.'
         ],
-        technologies: ['React', 'React Native', 'gRPC', 'NestJS', 'NATS', 'Postgres', 'AWS']
+        technologies: ['React', 'React Native', 'gRPC', 'NestJS', 'NodeJS', 'Prisma', 'NATS', 'Postgres', 'AWS']
       },
       {
         company: 'Diginex',
@@ -66,7 +66,7 @@ export default function Index() {
           'Led a Vietnam-based scrum team of eight engineers to develop and enhance features for the ESG platform using VueJS and NestJS.',
           'Architected real-time data processing systems with Kafka and Kubernetes, ensuring robustness and scalability for growing client demands.'
         ],
-        technologies: ['VueJS', 'NestJS', 'Kafka', 'Postgres', 'Azure', 'Kubernetes']
+        technologies: ['VueJS', 'NestJS', 'NodeJS', 'Kafka', 'Postgres', 'Azure', 'Kubernetes', 'TypeORM']
       },
       {
         company: 'HK01',
@@ -79,7 +79,7 @@ export default function Index() {
           'Built a custom HTML video player with VideoJS SDK for 01TV, enhancing multimedia performance.',
           'Migrated the frontend from styled-components to Tailwind, reducing render times by 30%.'
         ],
-        technologies: ['React', 'NestJS', 'NextJS', 'Tailwind', 'Laravel', 'Storybook', 'AWS', 'Kubernetes']
+        technologies: ['React', 'NestJS', 'NextJS', 'Tailwind', 'Laravel', 'Storybook', 'AWS', 'Kubernetes', 'NodeJS', 'styled-components']
       },
       {
         company: 'Shopline',
@@ -102,7 +102,7 @@ export default function Index() {
       },
       {
         name: 'Backend Technologies',
-        skills: ['NestJS', 'NodeJS', 'Ruby on Rails', 'gRPC', 'NATS', 'Kafka', 'Laravel', 'PostgreSQL']
+        skills: ['NestJS', 'NodeJS', 'Ruby on Rails', 'gRPC', 'NATS', 'Kafka', 'Laravel', 'PostgreSQL', 'Prisma', 'TypeORM']
       },
       {
         name: 'DevOps & Cloud',
